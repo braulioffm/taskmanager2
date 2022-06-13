@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Project;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -61,6 +63,6 @@ class User extends Authenticatable
 
     //relacion uno a muchos
     public function projects(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Project::class);
     }
 }

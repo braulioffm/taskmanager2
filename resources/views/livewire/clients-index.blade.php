@@ -2,26 +2,24 @@
 <div class="card">
 
     <div class="card-header">
-            <input wire:model="search" class="form-control" type="text" placeholder="Ingrese el nombre de un proyecto">
+            <input wire:model="search" class="form-control" type="text" placeholder="Ingrese el nombre de un cliente">
     </div>
 
-    @if ($projects->count()) 
+    @if ($clients->count()) 
 
     <div class="card-body">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Encargado</th>
-                    <th>Cliente</th>
+                    <th>Proyectos</th>
                     <th colspan="1">Opciones</th>
                 </tr>
                 <tbody>
-                    @foreach ($projects as $project)
+                    @foreach ($clients as $client)
                         <tr>
-                            <td>{{$project->name}}</td>
-                            <td>{{$project->user->name}}</td>
-                            <td>{{$project->client->name}}</td>
+                            <td>{{$client->name}}</td>
+                            <td>{{$client->projects->count()}}</td>
                             <td width="20px">
                                 <a class="btn btn-primary btn-sm" href="#">Ver</a>    
                             </td>
@@ -36,7 +34,7 @@
 
 
     <div class="card-footer">        
-        {{ $projects->links() }}
+        {{ $clients->links() }}
     </div>
     @else
     <div class="card-body"><strong>No hay ningun registro</strong></div>

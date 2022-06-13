@@ -4,11 +4,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-use App\Models\Project;
+use App\Models\User;
 
 use Livewire\WithPagination;
 
-class ProjectsIndex extends Component
+class UsersIndex extends Component
 {
     use WithPagination;
 
@@ -24,9 +24,9 @@ class ProjectsIndex extends Component
     public function render()
     {
 
-        $projects = Project::where('name', 'LIKE','%' . $this->search . '%')->paginate(5);
+        $users = User::where('name', 'LIKE','%' . $this->search . '%')->paginate(5);
 
-        return view('livewire.projects-index', compact('projects'));
+        return view('livewire.users-index', compact('users'));
 
         //return dd($projects);
     }

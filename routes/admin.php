@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,9 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
+Route::resource('users', UserController::class)->names('admin.users');
+
+Route::resource('clients', ClientController::class)->names('admin.clients');
 
 Route::resource('projects', ProjectController::class)->names('admin.projects');
 

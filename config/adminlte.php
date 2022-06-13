@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => 'Panel<b>ON</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -188,13 +188,13 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => 'false',
 
     /*
     |--------------------------------------------------------------------------
@@ -228,7 +228,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'Buscar',
             'topnav_right' => true,
         ],
         [
@@ -239,13 +239,14 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscar',
         ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'MENU PRINCIPAL'],
         [
             'text'        => 'Proyectos',
             'route'         => 'admin.projects.index',
@@ -253,7 +254,21 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        [
+            'text'        => 'Clientes',
+            'route'         => 'admin.clients.index',
+            'icon'        => 'fas fa-user-tie'
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'far fa-fw fa-user'
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        ['header' => 'CONFIGURACION DE CUENTA'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
