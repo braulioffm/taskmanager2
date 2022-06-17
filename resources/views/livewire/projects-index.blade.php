@@ -23,7 +23,7 @@
                             <td>{{$project->user->name}}</td>
                             <td>{{$project->client->name}}</td>
                             <td width="20px">
-                                <a class="btn btn-primary btn-sm" href="#">Ver</a>    
+                                <a class="btn btn-primary btn-sm" href="{{route('admin.projects.show', $project)}}">Ver</a>    
                             </td>
                         </tr>
                         
